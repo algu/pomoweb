@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Web", "pomoweb\pomoweb.Web.csproj", "{15A198DE-4A2C-497B-8715-28039217BCE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Tests", "pomoweb.Tests\pomoweb.Tests.csproj", "{5B20EA38-E0B9-48D2-919E-37E4BDC1884C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Domain", "pomoweb.Domain\pomoweb.Domain.csproj", "{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15A198DE-4A2C-497B-8715-28039217BCE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A198DE-4A2C-497B-8715-28039217BCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A198DE-4A2C-497B-8715-28039217BCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A198DE-4A2C-497B-8715-28039217BCE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B20EA38-E0B9-48D2-919E-37E4BDC1884C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B20EA38-E0B9-48D2-919E-37E4BDC1884C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B20EA38-E0B9-48D2-919E-37E4BDC1884C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B20EA38-E0B9-48D2-919E-37E4BDC1884C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,46 @@
+﻿body {
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    background-image: url(base/images/background_texture.jpg);
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+.bubble {
+    width: 600px; /* Ширина элемента в пикселах */
+    margin: auto; /* Выравниваем по центру */
+    background: rgba(150, 170, 190, 0.6); /* Цвет фона */
+    height: 1%; /* Для IE6-7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e600aaee, endColorstr=#e600aaee);
+    color: #fff; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+    -moz-border-radius: 5px; /* Для Firefox 3 */
+    -webkit-border-radius: 5px; /* Для Safari 4 и Chrome */
+    border-radius: 5px; /* Для современных браузеров */
+}
+
+.timer {
+    width: 600px; /* Ширина элемента в пикселах */
+    margin: auto; /* Выравниваем по центру */
+    background: rgba(150, 170, 190, 0.6); /* Цвет фона */
+    height: 1%; /* Для IE6-7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e600aaee, endColorstr=#e600aaee);
+    color: #fff; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+    -moz-border-radius: 5px; /* Для Firefox 3 */
+    -webkit-border-radius: 5px; /* Для Safari 4 и Chrome */
+    border-radius: 5px; /* Для современных браузеров */
+}
+
+#dial {
+    width: 200px; /* Ширина левой колонки */
+    float: left; /* Превращаем в плавающий элемент */
+    font-weight: bold;
+    font-size: xx-large;
+    color: lime;
+    font: bold 16px MS Sans Serif;
+    padding: 3px;
+}
+
+.StartBtn {
+    padding: 5px;
+}
