@@ -129,6 +129,7 @@
     <Content Include="Content\themes\base\images\numbers\7.gif" />
     <Content Include="Content\themes\base\images\numbers\8.gif" />
     <Content Include="Content\themes\base\images\numbers\9.gif" />
+    <Content Include="Content\themes\base\images\numbers\colon2.gif" />
     <Content Include="Content\themes\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\timer.js" />

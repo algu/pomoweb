@@ -1,27 +1,28 @@
-﻿var sec = 00;   // set the seconds
-var min = 25;   // set the minutes
+﻿var sec = 00;
+var min = 25;
+var IsStarted = false;
+var time = "";
+var SD;
 
-function DateReplace ($ReplaceText)
-{
-    $Numbers=array(
-		'1' => "<img src='~/images/numbers/1.gif' />",
-		'2' => "<img src='~/images/numbers/2.gif' />",
-		'3' => "<img src='~/images/numbers/3.gif' />",
-		'4' => "<img src='~/images/numbers/4.gif' />",
-		'5' => "<img src='~/images/numbers/5.gif' />",
-		'6' => "<img src='~/images/numbers/6.gif' />",
-		'7' => "<img src='~/images/numbers/7.gif' />",
-		'8' => "<img src='~/images/numbers/8.gif' />",
-		'9' => "<img src='~/images/numbers/9.gif' />",
-		'0' => "<img src='~/images/numbers/0.gif' />"
-	);
-
-    $Date=str_replace(array_keys($Numbers), array_values($Numbers), $ReplaceText);
-
-    return $Date;	
+function DateReplace(replaceText) {
+    var text = "";
+    var img = " <img src='Content/themes/base/images/numbers/";
+    for (var i = 0; i < replaceText.length; i++) {
+        if (replaceText[i] == ":") {
+            text += img + "colon2.gif'/> ";
+        }
+        if (isNaN(replaceText[i]) == false)
+        {
+            text += img + replaceText[i] + ".gif'/> ";
+        }
+    }
+    return text;
 }
 
 function countDown() {
+    if (IsStarted == false) {
+        return;
+    }
     sec--;
     if (sec == -01) {
         sec = 59;
@@ -35,9 +36,36 @@ function countDown() {
 
     time = (min <= 9 ? "0" + min : min) + ":" + sec;
 
-    if (document.getElementById) { document.getElementById('dial').innerHTML = time; }
+    if (document.getElementById) {
+        document.getElementById('dial').innerHTML = DateReplace(time);
+    }
 
     SD = window.setTimeout("countDown();", 1000);
     if (min == '00' && sec == '00') { sec = "00"; window.clearTimeout(SD); }
 }
-window.onload = countDown;
+
+function registerEvents() {
+    var elt = document.getElementById("start_btn");
+    
+    elt.onclick = function () {
+        if (IsStarted == false) {
+            IsStarted = true;
+            elt.innerHTML = "Stop timer";
+            countDown();
+        } else {
+            IsStarted = false;
+            elt.innerHTML = "Start timer";
+        }
+        
+        min = 25;
+        sec = 00;
+        document.getElementById('dial').innerHTML = DateReplace("25:00");
+    };
+}
+
+function Init_Scripts() {
+    document.getElementById('dial').innerHTML = DateReplace("25:00");
+    registerEvents();
+}
+
+window.onload = Init_Scripts;
