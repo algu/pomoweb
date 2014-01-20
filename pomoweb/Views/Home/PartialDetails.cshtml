@@ -1,0 +1,41 @@
+﻿@model pomoweb.Domain.ViewModels.PomoFull
+
+<fieldset>
+    <legend>PomoFull</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Estimate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estimate)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Pomodoros)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pomodoros)
+    </div>
+</fieldset>
+<p>
+    @Ajax.ActionLink("Edit", "PartialEdit", new { id = Model.Id }, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "main"
+                })
+    @Ajax.ActionLink("Back to List", "PartialList", new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "main"
+                })
+
+</p>
+
+

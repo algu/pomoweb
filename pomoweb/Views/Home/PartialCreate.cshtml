@@ -1,0 +1,45 @@
+﻿@using System.Activities.Expressions
+@using pomoweb.Domain.ViewModels
+@model pomoweb.Domain.ViewModels.PomoShort
+
+@using (Ajax.BeginForm("PartialCreate",new AjaxOptions()
+{
+    UpdateTargetId = "main",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PomoShort</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Estimate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Estimate)
+            @Html.ValidationMessageFor(model => model.Estimate)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+        @Ajax.ActionLink("Back to List", "PartialList", new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "main"
+                })
+</div>

@@ -132,6 +132,11 @@
     <Content Include="Content\themes\base\images\numbers\colon2.gif" />
     <Content Include="Content\themes\Site.css" />
     <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\timer.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -141,6 +146,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <Content Include="Views\Home\PartialCreate.cshtml" />
+    <Content Include="Views\Home\PartialDetails.cshtml" />
+    <Content Include="Views\Home\PartialEdit.cshtml" />
+    <Content Include="Views\Home\PartialList.cshtml" />
+    <Content Include="Views\Home\PartialDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -157,6 +168,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pomoweb.Domain\pomoweb.Domain.csproj">
+      <Project>{b12d9f8f-9c6e-4912-800d-3d2ff971a95a}</Project>
+      <Name>pomoweb.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

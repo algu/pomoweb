@@ -18,7 +18,8 @@ namespace pomoweb.Domain.Entities
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Int32 Id { get; set; }
-        public string Description { get; set; }
+        public string Name { get; set; }
+        public Int32 Estimate { get; set; }
         //foreign key for User
         public Int32 UserId { get; set; }
         //foreign key for Category (allow null)

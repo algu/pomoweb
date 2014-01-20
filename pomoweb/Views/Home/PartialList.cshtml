@@ -1,0 +1,59 @@
+﻿@model IEnumerable<pomoweb.Domain.ViewModels.PomoFull>
+
+<p>
+    @Ajax.ActionLink("Create New", "PartialCreate", new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "main"
+                })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estimate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pomodoros)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estimate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pomodoros)
+            </td>
+            <td>
+                @Ajax.ActionLink("Edit", "PartialEdit", new { id = item.Id }, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "main"
+                })
+
+                @Ajax.ActionLink("Details", "PartialDetails", new { id = item.Id }, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "main"
+                })
+
+                @Ajax.ActionLink("Delete", "PartialDelete", new { id = item.Id }, new AjaxOptions()
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "main"
+                })
+            </td>
+        </tr>
+    }
+
+</table>
+
