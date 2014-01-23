@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -156,6 +162,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="WebAPI\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -170,6 +177,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\pomoweb.Data\pomoweb.Data.csproj">
+      <Project>{32B11715-A30D-471A-A7D2-9F11B1FBF192}</Project>
+      <Name>pomoweb.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\pomoweb.Domain\pomoweb.Domain.csproj">
       <Project>{b12d9f8f-9c6e-4912-800d-3d2ff971a95a}</Project>
       <Name>pomoweb.Domain</Name>

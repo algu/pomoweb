@@ -18,6 +18,7 @@ namespace pomoweb.Controllers
         
         public ActionResult Index()
         {
+            
             return PartialView(pomolist);
         }
 

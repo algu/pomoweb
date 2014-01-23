@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Tests", "pomoweb.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Domain", "pomoweb.Domain\pomoweb.Domain.csproj", "{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Data", "pomoweb.Data\pomoweb.Data.csproj", "{32B11715-A30D-471A-A7D2-9F11B1FBF192}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Core", "pomoweb.Core\pomoweb.Core.csproj", "{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B11715-A30D-471A-A7D2-9F11B1FBF192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B11715-A30D-471A-A7D2-9F11B1FBF192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B11715-A30D-471A-A7D2-9F11B1FBF192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B11715-A30D-471A-A7D2-9F11B1FBF192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
