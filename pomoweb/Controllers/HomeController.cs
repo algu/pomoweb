@@ -1,30 +1,35 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
+using pomoweb.Data.Repositories;
 using pomoweb.Domain.Entities;
-using pomoweb.Domain.ViewModels;
+using pomoweb.Domain.Repositories;
+using pomoweb.ViewModels;
+using pomoweb.Domain.Services;
 
 namespace pomoweb.Controllers
 {
     public class HomeController : Controller
     {
-        private static List<PomoFull> pomolist = new List<PomoFull>()
-            {
-                new PomoFull() {Id = 1, Name = "test1", Estimate = 7, Pomodoros = 2},
-                new PomoFull() {Id = 2, Name = "test2", Estimate = 7, Pomodoros = 0}
-            };
-        
+        private IPomodoroService _pomoservice;
+
+        public HomeController(IPomodoroService pomoService)
+        {
+            _pomoservice = pomoService;
+        }
+
         public ActionResult Index()
         {
-            
-            return PartialView(pomolist);
+            return PartialView(GetAllPomos());
         }
 
         public ActionResult PartialList()
         {
-            return PartialView(pomolist);
+            return PartialView(GetAllPomos());
         }
 
         public ActionResult PartialCreate()
@@ -35,55 +40,67 @@ namespace pomoweb.Controllers
         [HttpPost]
         public ActionResult PartialCreate(PomoShort p)
         {
-            pomolist.Add(new PomoFull() { Id = pomolist.Max(x => x.Id)+1, Name = p.Name, Estimate = p.Estimate, Pomodoros = 0});
+            _pomoservice.Add(p.Name, p.Estimate);
+
             if (Request.IsAjaxRequest())
             {
-                return PartialView("PartialList", pomolist);
+                return PartialView("PartialList", GetAllPomos());
             }
-            return View("PartialList", pomolist);
+            return View("PartialList", GetAllPomos());
         }
 
         public ActionResult PartialDetails(int id)
         {
-
-            return PartialView(pomolist.Find(x => x.Id == id));
+            return PartialView(GetPomoById(id));
         }
 
         public ActionResult PartialEdit(int id)
         {
-            return PartialView(pomolist.Find(x => x.Id == id));
+            return PartialView(GetPomoById(id));
         }
 
         [HttpPost]
         public ActionResult PartialEdit(PomoFull p)
         {
-            var pomo = pomolist.Find(x => x.Id == p.Id);
-            pomo.Name = p.Name;
-            pomo.Estimate = p.Estimate;
+            _pomoservice.Update(p.Id, p.Name, p.Estimate);
+
             if (Request.IsAjaxRequest())
             {
-                return PartialView("PartialList",pomolist);
+                return PartialView("PartialList", GetAllPomos());
             }
-            return View("PartialList", pomolist);
+            return View("PartialList", GetAllPomos());
         }
 
         public ActionResult PartialDelete(int id)
         {
-            return PartialView(pomolist.Find(x => x.Id == id));
+            return PartialView(GetPomoById(id));
         }
-        
+
         [HttpPost]
         public ActionResult PartialDelete(PomoFull p)
         {
-            //var pomo = pomolist.Find(x => x.Id == p.Id);
-            //pomolist.Remove(pomo);
-            pomolist.Remove(pomolist.Find(x => x.Id == p.Id));
-            
+            _pomoservice.Delete(p.Id);
+
             if (Request.IsAjaxRequest())
             {
-                return PartialView("PartialList", pomolist);
+                return PartialView("PartialList", GetAllPomos());
             }
-            return View("PartialList", pomolist);
+            return View("PartialList", GetAllPomos());
+        }
+        
+
+        private IList<PomoFull> GetAllPomos()
+        {
+            IEnumerable<Pomodoro> pomodoros = _pomoservice.GetAll();
+            IList<PomoFull> models = Mapper.Map<IEnumerable<Pomodoro>, IList<PomoFull>>(pomodoros);
+            return models;
+        }
+
+        private PomoFull GetPomoById(int id)
+        {
+            var pomodoro = _pomoservice.Get(x => x.Id == id).First();
+            var model = Mapper.Map<Pomodoro, PomoFull>(pomodoro);
+            return model;
         }
     }
 }

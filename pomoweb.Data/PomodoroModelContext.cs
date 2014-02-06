@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,11 @@ namespace pomoweb.Data
         public DbSet<Pomodoro> Pomodoros { get; set; }
         public DbSet<History> Histories { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        //public PomodoroModelContext()
+        //{
+        //    Database.SetInitializer(new PomoInitializer());
+        //}
     }
 
 }

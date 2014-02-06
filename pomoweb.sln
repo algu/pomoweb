@@ -9,7 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Domain", "pomoweb.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Data", "pomoweb.Data\pomoweb.Data.csproj", "{32B11715-A30D-471A-A7D2-9F11B1FBF192}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomoweb.Core", "pomoweb.Core\pomoweb.Core.csproj", "{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation Level", "1. Presentation Level", "{8791DDB4-CC76-4EA5-96F6-EB1481213E8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain Model", "2. Domain Model", "{53AF1A83-7A52-4CD4-9BC0-3AC13135C021}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data Access", "3. Data Access", "{C925F953-3139-48F4-AB80-68E2B82DCF6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Tests", "4. Tests", "{3FC8B48B-272D-467E-82CD-A2C9E0D4F39E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,12 +39,14 @@ Global
 		{32B11715-A30D-471A-A7D2-9F11B1FBF192}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32B11715-A30D-471A-A7D2-9F11B1FBF192}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32B11715-A30D-471A-A7D2-9F11B1FBF192}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43F1D911-784C-4C56-A3DC-E48A5C58DFF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15A198DE-4A2C-497B-8715-28039217BCE5} = {8791DDB4-CC76-4EA5-96F6-EB1481213E8B}
+		{B12D9F8F-9C6E-4912-800D-3D2FF971A95A} = {53AF1A83-7A52-4CD4-9BC0-3AC13135C021}
+		{32B11715-A30D-471A-A7D2-9F11B1FBF192} = {C925F953-3139-48F4-AB80-68E2B82DCF6A}
+		{5B20EA38-E0B9-48D2-919E-37E4BDC1884C} = {3FC8B48B-272D-467E-82CD-A2C9E0D4F39E}
 	EndGlobalSection
 EndGlobal

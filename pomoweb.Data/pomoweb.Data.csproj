@@ -46,18 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\IDatabaseFactory.cs" />
+    <Compile Include="Repositories\HistoryRepository.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="PomodoroModelContext.cs" />
+    <Compile Include="PomoInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\pomoweb.Domain\pomoweb.Domain.csproj">
-      <Project>{B12D9F8F-9C6E-4912-800D-3D2FF971A95A}</Project>
-      <Name>pomoweb.Domain</Name>
-    </ProjectReference>
+    <Compile Include="Repositories\PomodoroRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pomoweb.Domain\pomoweb.Domain.csproj">
+      <Project>{b12d9f8f-9c6e-4912-800d-3d2ff971a95a}</Project>
+      <Name>pomoweb.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
